@@ -1,0 +1,90 @@
+﻿<Window x:Class="electronicStore.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:electronicStore.WPF"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:viewModel="clr-namespace:electronicStore.WPF.MVVM.ViewModel"
+
+
+        mc:Ignorable="d"
+        Height="600" Width="950"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True">
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    
+    <Border Background="#f2f2f2" 
+            CornerRadius="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="electronStore" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" 
+                   Foreground="Black" 
+                   FontSize="22" />
+
+            <StackPanel Grid.Row="1">
+                <RadioButton Content="Home" 
+                             Command="{Binding CategoryCommand}"
+                             Height="50" 
+                             Foreground="Black" 
+                             FontSize="25"
+                             Style="{StaticResource MenuButtonTheme}"/>    
+                
+                <RadioButton Content="Price filter" 
+                             Checked="MenuRadioButton_Checked"
+                             Height="50" 
+                             Foreground="Black" 
+                             FontSize="25"
+                             Style="{StaticResource MenuButtonTheme}"/>          
+                
+                <RadioButton Content="Iphone" 
+                             Checked="MenuRadioButton_Checked"
+                             Height="50" 
+                             Foreground="Black" 
+                             FontSize="25"
+                             Style="{StaticResource MenuButtonTheme}"/>  
+                
+                <RadioButton Content="Poco" 
+                             Checked="MenuRadioButton_Checked"
+                             Height="50" 
+                             Foreground="Black" 
+                             FontSize="25"
+                             Style="{StaticResource MenuButtonTheme}"/>  
+                
+                <RadioButton Content="Samsung" 
+                             Checked="MenuRadioButton_Checked"
+                             Height="50" 
+                             Foreground="Black" 
+                             FontSize="25"
+                             Style="{StaticResource MenuButtonTheme}"/>
+                
+            </StackPanel>
+            <TextBox Width="500" 
+                       Height="50" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Left" 
+                       Margin="5" 
+                       Grid.Column="1"
+                       Style="{StaticResource ModernTextbox}"/>
+            <ContentControl Grid.Row="1" 
+                            Grid.Column="1" 
+                            Margin="10"
+                            Content="{Binding CurrentView}"/>
+        </Grid>
+    </Border>
+</Window>

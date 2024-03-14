@@ -1,0 +1,26 @@
+﻿<Window x:Class="electronicStore.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:electronicStore"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Program" Height="600" Width="800">
+    <Grid Background="#C6CCCD">
+        <Border MinWidth="400" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="18">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="38" Color="LightGray" ShadowDepth="1" />
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="ElectronStore!" FontSize="30" FontWeight="Bold" Margin="140 0 0 20" />
+
+                <Grid Margin="0 0 0 20" >
+                </Grid>
+                <TextBox x:Name="TexBoxEmail" materialDesign:HintAssist.Hint="E-mail"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <PasswordBox x:Name="PassBox" materialDesign:HintAssist.Hint="Password"  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+                <Button Content="Login" Margin="0 20 " Click="Button_Reg_Click"   />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
