@@ -1,7 +1,7 @@
 ﻿using Store.Application.Enums;
 using Store.Application.Models;
 
-namespace Store.Data1
+namespace Store.Data.Data
 {
     public static class SeedPhoneCollection
     {
@@ -78,7 +78,7 @@ namespace Store.Data1
                 Waterproof = true,
                 Id = 6,
             };
-            return new List<Phone> { SamsungA24, SamsungS23,PocoM4,PocoM5,Iphone14pro,Iphone15promax };
+            return new List<Phone> { SamsungA24, SamsungS23, PocoM4, PocoM5, Iphone14pro, Iphone15promax };
         }
     }
 }

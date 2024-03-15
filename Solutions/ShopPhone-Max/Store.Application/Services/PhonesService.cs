@@ -1,7 +1,7 @@
 ﻿using Store.Application.Models;
 using System.Text.Json;
 
-namespace Store.Application.Models.Services
+namespace Store.Application.Services
 {
     public class PhonesService
     {

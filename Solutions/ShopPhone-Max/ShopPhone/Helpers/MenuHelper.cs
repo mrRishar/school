@@ -1,6 +1,6 @@
-﻿using ShopePhone.ConsoleApp.Helper;
-using Store.Application.Enums;
-using Store.Application.Models.Services;
+﻿using Store.Application.Enums;
+using Store.Application.Models;
+using Store.Application.Services;
 
 namespace ShopPhone.ConsoleApp.Helpers
 {
