@@ -1,17 +1,17 @@
-﻿using electronicStore.WPF.MVVM.View;
+﻿using System.Windows;
+using System.Windows.Controls;
 using electronicStore.WPF.MVVM.ViewModel;
 using electronicStore.WPF.Windows;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace electronicStore.WPF
 {
-
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        IServiceProvider _serviceProvider;
+        public MainWindow(IServiceProvider serviceProvider)
         {
+            _serviceProvider = serviceProvider;
             InitializeComponent();
         }
 
@@ -32,7 +32,8 @@ namespace electronicStore.WPF
             var menuItem = (RadioButton)sender;
             if (menuItem?.IsChecked == true)
             {
-
+                var mainVm = _serviceProvider.GetRequiredService<MainViewModel>();
+                mainVm.SetHomeView(menuItem.Content.ToString());
             }
         }
     }

@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:electronicStore"
              xmlns:viewModel="clr-namespace:electronicStore.WPF.MVVM.ViewModel"
-             xmlns:view="clr-namespace:electronicStore.WPF.MVVM.View"
-             StartupUri="Windows/MainWindow.xaml">
+             xmlns:view="clr-namespace:electronicStore.WPF.MVVM.View">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -15,9 +14,15 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
             </ResourceDictionary.MergedDictionaries>
+           
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
                 <view:HomeView/>
             </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:ProductViewModel}">
+                <view:ProductView/>
+            </DataTemplate>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

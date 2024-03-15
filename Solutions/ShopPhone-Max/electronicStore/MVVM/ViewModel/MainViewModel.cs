@@ -1,25 +1,32 @@
-﻿using electronicStore.WPF.Core;
+﻿using System;
+using System.Windows.Controls;
+using electronicStore.WPF.Core;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace electronicStore.WPF.MVVM.ViewModel
 {
     class MainViewModel : ObservableObject
     {
-        public MainViewModel()
+        IServiceProvider _serviceProvider;
+        public MainViewModel(IServiceProvider serviceProvider)
         {
-            HomeVM = new HomeViewModel();
-            CurrentView = HomeVM;
-
-            CategoryCommand = new RelayCommand(f =>
-            {
-                HomeVM.Category = "1";
-            });
+            _serviceProvider = serviceProvider;
+            CurrentView = serviceProvider.GetRequiredService<HomeViewModel>();
         }
 
-        public HomeViewModel HomeVM { get; set; }
         public RelayCommand CategoryCommand { get; set; }
 
-        private object _currentView;
-        public object CurrentView
+        public void SetHomeView(string name)
+        {
+            var homeVm = _serviceProvider.GetRequiredService<HomeViewModel>();
+            homeVm.Category = name;
+
+            CurrentView = homeVm;
+        }
+
+
+        private ObservableObject _currentView;
+        public ObservableObject CurrentView
         {
             get { return _currentView; }
             set
@@ -27,7 +34,6 @@ namespace electronicStore.WPF.MVVM.ViewModel
                 _currentView = value;
                 OnPropertyChanged();
             }
-
         }
     }
 }

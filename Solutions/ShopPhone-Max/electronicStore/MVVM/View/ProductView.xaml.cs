@@ -16,9 +16,9 @@ using System.Windows.Shapes;
 
 namespace electronicStore.WPF.MVVM.View
 {
-    public partial class HomeView : UserControl
+    public partial class ProductView : UserControl
     {
-        public HomeView()
+        public ProductView()
         {
             InitializeComponent();
         }

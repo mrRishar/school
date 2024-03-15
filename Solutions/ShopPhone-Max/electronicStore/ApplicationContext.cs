@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
-using electronicStore.WPF;
 
-namespace electronicStore
+namespace electronicStore.WPF
 {
     class ApplicationContext : DbContext
     {

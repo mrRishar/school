@@ -33,9 +33,12 @@
                 </Border.Clip>
                 <Grid>
                     <StackPanel>
-                        <TextBlock Text="Iphone 15 Pro Max"
+                        <Button Content="Iphone 15 Pro Max"
                                    Foreground="White"
+                                   Background="Transparent"
+                                   BorderThickness="0"
                                    FontSize="22"
+                                   Command="{Binding ProductCommand}"
                                    HorizontalAlignment="Center"
                                    Margin="0,170,0,0"/>
                         <TextBlock Text="69 999₴"
